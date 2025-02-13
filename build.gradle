@@ -18,16 +18,41 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot Core
 	implementation 'org.springframework.boot:spring-boot-starter'
-	// Lombok Dependencies
+
+	// Lombok for reducing boilerplate code
 	implementation 'org.projectlombok:lombok:1.18.28'
 	annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// Spring Boot Web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// JPA and PostgreSQL
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Spring Security for Authentication
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Liquibase for database migrations
+	implementation 'org.liquibase:liquibase-core'
+
+	// Add jjwt dependency for JWT handling
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// Validation for DTOs
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+	testImplementation 'org.mockito:mockito-core:5.3.1'
 }
 
-//tasks.named('test') {
-//	useJUnitPlatform()
-//}
+test {
+	useJUnitPlatform()
+}
