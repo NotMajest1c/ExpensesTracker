@@ -24,7 +24,7 @@ public class ReportController {
     }
 
     @GetMapping
-    public Dictionary<String, BigDecimal> getAllExpenses(Authentication authentication) {
+    public Dictionary<String, BigDecimal> getReportExpenses(Authentication authentication) {
         UserEntity user = getAuthenticatedUser(authentication);
         return reportService.getExpenseReport(user);
 
