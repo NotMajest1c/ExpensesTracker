@@ -23,6 +23,7 @@ public class ExpenseEntity {
     private String description;
     private BigDecimal amount;
     private LocalDate date;
+    private String recurrence = "no";
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

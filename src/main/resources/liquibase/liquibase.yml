@@ -62,6 +62,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: recurrence
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
                   name: date
                   type: timestamp
                   constraints:
